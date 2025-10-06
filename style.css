@@ -1,18 +1,92 @@
-body {
-    width: 500px;
-    margin: auto;
-    text-align: center;
-}
+ body {
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 12px;
+     background-position-x: calc(50% - 532px), calc(50% + 532px);
+     background-color: #dedfe3;
+     background-image: url(/sites/all/themes/pdga/images/2025-gannon-buhr.png?s=1), url(/sites/all/themes/pdga/images/2025-ohn-scoggins.png?s=1);
+     background-repeat: no-repeat, no-repeat;
+     background-position-x: calc(50% - 400px), calc(50% + 400px);
+     background-position-y: bottom, bottom;
+     background-size: auto 100%, auto 94%;
+     background-attachment: fixed, fixed;
 
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
+ }
 
-footer {
-    background-color: lightgray;
-    padding: 10px;
-    text-align: start;
-    font-size: 0.9em;
-    margin-top: 20px;
-}
+ #logo {
+     width: 300px;
+ }
+
+ #slide {
+     display: flex;
+ }
+
+ #slide_pic {
+     width: 400px;
+ }
+
+ #panel {
+     text-align: center;
+ }
+
+ #page {
+     width: 960px;
+     margin: 0 auto;
+     box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 5px 0 15px -4px #333, -5px 0 15px -4px #333;
+ }
+
+ #panel {
+     margin-left: 10px;
+     margin-right: 10px;
+ }
+
+ table {
+     margin: auto;
+     border: none;
+     width: 100%;
+ }
+
+ tbody {
+     border-top: 1px solid #ccc;
+ }
+
+ thead th,
+ th {
+     background: -webkit-gradient(linear, left top, left bottom, from(#05426e), to(#03253e));
+     background-color: rgba(0, 0, 0, 0);
+     background: -moz-linear-gradient(top center, #05426e, #03253e);
+     background-color: #002744;
+     color: #fff;
+     font-weight: bold;
+     border-bottom: none;
+     margin: 0 0 5px;
+     padding: 10px;
+     line-height: 1;
+     text-transform: none;
+ }
+
+ tr:nth-child(2n),
+ tr:nth-child(2n+1) {
+     background-color: #f6f8f9;
+     border-bottom: 1px solid #cddcea;
+     padding: 0.1em 0.6em;
+ }
+
+ td,
+ th {
+     padding: 4px 8px;
+     vertical-align: middle;
+ }
+
+ div {
+     display: block;
+     unicode-bidi: isolate;
+ }
+
+ footer {
+     color: white;
+     background-color: rgb(52, 52, 77);
+     padding: 10px;
+     text-align: start;
+     font-size: 0.9em;
+     margin-top: 20px;
+ }
