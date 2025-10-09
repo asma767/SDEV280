@@ -1,20 +1,59 @@
  body {
      font-family: Arial, Helvetica, sans-serif;
      font-size: 12px;
-     background-position-x: calc(50% - 532px), calc(50% + 532px);
+
      background-color: #dedfe3;
-     background-image: url(/sites/all/themes/pdga/images/2025-gannon-buhr.png?s=1), url(/sites/all/themes/pdga/images/2025-ohn-scoggins.png?s=1);
+
+     background-image: url("https://www.pdga.com/sites/all/themes/pdga/images/2025-gannon-buhr.png?s=1"), url("https://www.pdga.com/sites/all/themes/pdga/images/2025-ohn-scoggins.png?s=1");
      background-repeat: no-repeat, no-repeat;
-     background-position-x: calc(50% - 400px), calc(50% + 400px);
-     background-position-y: bottom, bottom;
-     background-size: auto 100%, auto 94%;
+     background-position: calc(50% - 600px) bottom, calc(50% + 600px) bottom;
+     background-size: 640px auto, 680px auto;
      background-attachment: fixed, fixed;
 
  }
 
+ header nav {
+     display: grid;
+     grid-template-columns: auto auto 1fr auto;
+     gap: 12px;
+     align-items: center;
+ }
+
+ header nav ul {
+     grid-column: 1 /-1;
+     display: grid;
+     grid-template-columns: repeat(9, 1fr);
+     gap: 6px;
+     margin: 8px 0 0;
+     padding: 0;
+ }
+
+ header nav a.btn {
+     display: block;
+     text-align: center;
+ }
+
+
+ header nav form {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+ }
+
+
  #logo {
      width: 300px;
  }
+
+ div#top {
+     margin-bottom: 40px;
+     margin-top: 40px;
+ }
+
+ div#top h1 {
+     font-size: 35px;
+ }
+
 
  #slide {
      display: flex;
@@ -32,6 +71,8 @@
      width: 960px;
      margin: 0 auto;
      box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 5px 0 15px -4px #333, -5px 0 15px -4px #333;
+     background-color: #ffffff;
+     padding: 18px;
  }
 
  #panel {
@@ -39,10 +80,23 @@
      margin-right: 10px;
  }
 
+ h5 {
+     font-size: 20px;
+ }
+
  table {
      margin: auto;
      border: none;
-     width: 100%;
+ }
+
+ table a {
+     color: white;
+ }
+
+ table#upcoming_table,
+ table#past {
+     table-layout: fixed;
+     width: 400px;
  }
 
  tbody {
@@ -64,6 +118,15 @@
      text-transform: none;
  }
 
+ table#past {
+     margin-bottom: 50px;
+ }
+
+
+ table#past th {
+     height: 25px;
+ }
+
  tr:nth-child(2n),
  tr:nth-child(2n+1) {
      background-color: #f6f8f9;
@@ -80,6 +143,24 @@
  div {
      display: block;
      unicode-bidi: isolate;
+ }
+
+
+ .dbwinnertable {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 16px;
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ .cardWinner {
+     border-radius: 8px;
+     padding: ;
+ }
+
+ .cardWinner h3 {
+     text-align: center;
  }
 
  footer {
