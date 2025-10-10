@@ -129,7 +129,7 @@
  table#upcoming_table,
  table#past {
      table-layout: fixed;
-     width: 700x;
+     max-width: 750px;
  }
 
  tbody {
