@@ -26,11 +26,18 @@
      gap: 6px;
      margin: 8px 0 0;
      padding: 0;
+     list-style: none;
  }
 
  header nav a.btn {
      display: block;
      text-align: center;
+     padding: 10px 12px;
+     text-decoration: none;
+     font-weight: 700;
+     background: linear-gradient(to bottom, #05426e 0%, #03253e 100%);
+     color: #fff;
+     list-style: none;
  }
 
 
@@ -38,6 +45,8 @@
      display: flex;
      align-items: center;
      gap: 8px;
+     grid-column: 4;
+     justify-self: end;
  }
 
 
@@ -48,6 +57,7 @@
  div#top {
      margin-bottom: 40px;
      margin-top: 40px;
+     font-size: 1.2em;
  }
 
  div#top h1 {
@@ -55,13 +65,36 @@
  }
 
 
- #slide {
+ div#slide {
+     width: 100%;
      display: flex;
+     align-content: stretch;
+     align-items: center;
+     column-gap: 30px;
+ }
+
+ div#slide #slide_desc {
+     width: 100%;
+     font-size: 1.2em;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 40px;
+
+ }
+
+ #slide_desc h4 {
+     justify-self: flex-start;
+ }
+
+ #slide_desc p {
+     width: 70%;
  }
 
  #slide_pic {
-     width: 400px;
+     width: 420px;
  }
+
 
  #panel {
      text-align: center;
@@ -96,7 +129,7 @@
  table#upcoming_table,
  table#past {
      table-layout: fixed;
-     width: 400px;
+     width: 700x;
  }
 
  tbody {
@@ -130,8 +163,8 @@
  tr:nth-child(2n),
  tr:nth-child(2n+1) {
      background-color: #f6f8f9;
-     border-bottom: 1px solid #cddcea;
-     padding: 0.1em 0.6em;
+     border-bottom: 3px solid #fbfcfd;
+     padding: 0.1em 1em;
  }
 
  td,
@@ -156,11 +189,47 @@
 
  .cardWinner {
      border-radius: 8px;
-     padding: ;
+     padding: 12px;
  }
 
  .cardWinner h3 {
      text-align: center;
+ }
+
+
+ .dashboard-summary {
+     max-width: 720px;
+     margin: 0 auto 12px;
+ }
+
+ #winner_counts {
+     width: 100%;
+     border-collapse: collapse;
+ }
+
+ #winner_counts td,
+ #winner_counts th {
+     padding: 8px 12px;
+     text-align: left;
+ }
+
+
+ #winner_counts th:first-child,
+ #winner_counts td:first-child {
+     border-right: 2px solid #f8fafc;
+     padding-right: 16px;
+ }
+
+ #winner_counts th:last-child,
+ #winner_counts td:last-child {
+     padding-left: 16px;
+     text-align: center;
+ }
+
+ #winner_counts thead th {
+     background: linear-gradient(to bottom, #05426e 0%, #03253e 100%);
+     color: #fff;
+     font-weight: 700;
  }
 
  footer {
