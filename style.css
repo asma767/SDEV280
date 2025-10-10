@@ -64,6 +64,11 @@
      font-size: 35px;
  }
 
+div#top p {
+    max-width: 650px;
+    margin: auto;
+}
+
 
  div#slide {
      width: 100%;
@@ -129,7 +134,8 @@
  table#upcoming_table,
  table#past {
      table-layout: fixed;
-     width: 700x;
+     max-width: 750px;
+     width: 100%;
  }
 
  tbody {
