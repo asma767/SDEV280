@@ -49,6 +49,12 @@
      justify-self: end;
  }
 
+ header nav a.btn:hover {
+     filter: brightness(1.08);
+     transform: translateY(-1px);
+ }
+
+
 
  #logo {
      width: 300px;
@@ -65,9 +71,17 @@
  }
 
 
+ div#top p {
+     max-width: 650px;
+     margin: auto;
+ }
+
+
  div#slide {
      width: 100%;
+     max-width: 800px;
      display: flex;
+     margin: auto;
      align-content: stretch;
      align-items: center;
      column-gap: 30px;
@@ -76,19 +90,33 @@
  div#slide #slide_desc {
      width: 100%;
      font-size: 1.2em;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
+     display: grid;
+     align-items: space-between;
      gap: 40px;
+     grid-template-areas:
+         "title title"
+         "par par"
+         "prev next";
 
  }
 
  #slide_desc h4 {
-     justify-self: flex-start;
+     grid-area: title;
+
  }
 
  #slide_desc p {
      width: 70%;
+     grid-area: par;
+     justify-self: center;
+ }
+
+ #slide_desc button.nav_prev {
+     grid-area: prev;
+ }
+
+ #slide_desc button.nav_next {
+     grid-area: next;
  }
 
  #slide_pic {
@@ -129,7 +157,7 @@
  table#upcoming_table,
  table#past {
      table-layout: fixed;
-     width: 700x;
+     width: 720px;
  }
 
  tbody {
@@ -156,8 +184,9 @@
  }
 
 
- table#past th {
-     height: 25px;
+ table#past th#year {
+     column-width: auto;
+     height: 15px;
  }
 
  tr:nth-child(2n),
@@ -165,6 +194,12 @@
      background-color: #f6f8f9;
      border-bottom: 3px solid #fbfcfd;
      padding: 0.1em 1em;
+ }
+
+
+ table tbody tr:hover {
+     background-color: #e9f6fb;
+     transition: background-color 150ms ease-in-out;
  }
 
  td,
@@ -190,6 +225,10 @@
  .cardWinner {
      border-radius: 8px;
      padding: 12px;
+     background: #fff;
+     border-radius: 0px;
+     padding: 5px;
+     box-shadow: 0 4px 18px rgba(0, 10, 18, 0.18);
  }
 
  .cardWinner h3 {
@@ -205,6 +244,7 @@
  #winner_counts {
      width: 100%;
      border-collapse: collapse;
+
  }
 
  #winner_counts td,

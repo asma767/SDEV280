@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script defer src="sprint.js"></script>
     <title>Professional Disc Golf Association</title>
 </head>
 
@@ -57,8 +58,9 @@
                     <img id='slide_pic' src="https://live.staticflickr.com/65535/54746751923_2514477b77_z.jpg">
                     <div id='slide_desc'>
                         <h4 id='slide_title'>The Final Throw</h4>
-                        <p>A contestant from TerRon 2023 displays her disc-golf skills in the final stretch of the
-                            tournament.</p>
+                        <p id='slide_caption'></p>
+                        <button class="nav_prev" type="button" aria-label="Previous image">‹</button>
+                        <button class="nav_next" type="button" aria-label="Next image">›</button>
 
 
                     </div>
@@ -124,10 +126,11 @@
 
                 <table id='past'>
                     <h5>Past Events</h5>
+                    <p>*Click the year to be directed to the event page.</p>
                     <tbody>
                         <tr>
-                            <th>Year</th>
-                            <th width=250px>Sponsor</th>
+                            <th id='year' width=29.35px>Year</th>
+                            <th width=425px>Sponsor</th>
                             <th>Pro Purse</th>
                         </tr>
                         <tr>
