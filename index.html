@@ -29,42 +29,40 @@
                     <li><a class="btn" href="https://www.pdga.com/introduction" target="_blank">About</a></li>
                     <li><a class="btn" href="https://www.pdga.com/membership" target="_blank">Membership</a></li>
                     <li><a class="btn" href="https://www.pdga.com/tour/events" target="_blank">Events</a></li>
-                    <li><a class="btn" href="https://www.pdga.com/course-directory" target="_blank">Courses</a></li>
-                    <li><a class="btn" href="https://www.pdga.com/rules" target="_blank">Rules</a></li>
-                    <li><a class="btn" href="https://www.pdga.com/media" target="_blank">Media</a></li>
-                    <li><a class="btn" href="https://www.pdga.com/international" target="_blank">International</a></li>
                     <li><a class="btn" href="https://www.pdga.com/throwgreen" target="_blank">More</a></li>
                 </ul>
             </nav>
         </header>
         <!--COMMENT BOX-->
 
-        <!-- Seadrah content -->
 
         <section id='content'>
             <div id='panel'>
+                <input id='event_search' value='Search events...'></input>
+                <div class="dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
                 <div id='top'>
-                    <h1 id='event_title'>TerRon Open</h1>
-                    <h2 id='event_subtitle'>PRO / AM B-TIER</h2>
-                    <h3 id='event_location'>Kent, Washington</h3>
-                    <h4 id='event_director'>Directed by Tyler Shrock</h4>
-                    <p> The TerRon Open is hosted yearly at Lake Fenwick Park in Kent, Washington. This park boasts disc
-                        golf baskets alongside lush trees and greenery. It currently hosts 7 divisions and has been
+                    <img id='event_logo' width=100px
+                        src='https://d22ksth68ujgu2.cloudfront.net/t_event-listing-logo_2be7a4f1-76fa-4c7d-9fb5-bb6f02c4cbbd' />
+                    <div id='event_header'>
+                        <h1 id='event_title'>TerRon Open - </h1>
+                        <h2 id='event_subtitle'>PRO / AM B-TIER</h2>
+                        <h3 id='event_location'>Kent, Washington</h3>
+                        <h4 id='event_director'>Directed by Tyler Shrock</h4>
+                    </div>
+                    <p id='desc'> The TerRon Open is hosted yearly at Lake Fenwick Park in Kent, Washington. This park
+                        boasts
+                        disc golf baskets alongside lush trees and greenery. It currently hosts 7 divisions and has been
                         hosted since 2020.
                     </p>
                 </div>
 
-                <div id='slide'>
-                    <img id='slide_pic' src="https://live.staticflickr.com/65535/54746751923_2514477b77_z.jpg">
-                    <div id='slide_desc'>
-                        <h4 id='slide_title'>The Final Throw</h4>
-                        <p id='slide_caption'></p>
-                        <button class="nav_prev" type="button" aria-label="Previous image">‹</button>
-                        <button class="nav_next" type="button" aria-label="Next image">›</button>
-
-
-                    </div>
-                </div>
                 <div id='upcoming'>
                     <h5>Upcoming Event</h5>
                     <div id='up_events'>
@@ -86,57 +84,18 @@
                 </div>
 
 
-                <div id='dashboard'>
-                    <h5>Leaderboard</h5>
-
-                    <div class="dashboard-summary">
-                        <table id="winner_counts">
-                            <thead>
-                                <tr>
-                                    <th>Winner</th>
-                                    <th>Wins</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Kirby Snyder</td>
-                                    <td>4</td>
-                                </tr>
-                                <tr>
-                                    <td>Cory McCarthy</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td>Dan O'Brien</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Steve Bell</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Ronald Weimer</td>
-                                    <td>2</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <table id='past'>
-                    <h5>Past Events</h5>
-                    <p>*Click the year to be directed to the event page.</p>
-                    <tbody>
-                        <tr>
-                            <th id='year' width=29.35px>Year</th>
-                            <th width=425px>Sponsor</th>
+                <table id="past">
+                    <thead>
+                        <tr id="togglePast">
+                            <th id="year" width="29.35px">Year</th>
+                            <th width="425px">Sponsor</th>
                             <th>Pro Purse</th>
                         </tr>
+                    </thead>
+
+                    <tbody id="pastBody">
                         <tr>
-                            <th>
-                                <a href="https://www.pdga.com/tour/event/95906">2025</a>
-                            </th>
+                            <th><a href="https://www.pdga.com/tour/event/95906">2025</a></th>
                             <td>N/A</td>
                             <td>$1,535</td>
                         </tr>
@@ -167,6 +126,7 @@
                         </tr>
                     </tbody>
                 </table>
+
             </div>
         </section>
 
@@ -472,6 +432,43 @@
                 </table>
             </section>
         </div>
+        <div id="dashboard">
+            <h5>LeaderBoard</h5>
+
+            <div class="dashboard-summary">
+                <table id="winner_counts">
+                    <thead>
+                        <tr id="toggleTable">
+                            <th>Winner</th>
+                            <th>Wins</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td>Kirby Snyder</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Cory McCarthy</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Dan O'Brien</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Steve Bell</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Ronald Weimer</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
 
 
         <footer>
@@ -483,6 +480,35 @@
             </div>
         </footer>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // === LeaderBoard Toggle ===
+            const toggleHeader = document.getElementById("toggleTable");
+            const tableBody = document.getElementById("tableBody");
+            tableBody.style.display = "none";
+
+            toggleHeader.addEventListener("click", function () {
+                tableBody.style.display =
+                    tableBody.style.display === "none" || tableBody.style.display === ""
+                        ? "table-row-group"
+                        : "none";
+            });
+
+            // === Past Events Toggle ===
+            const togglePast = document.getElementById("togglePast");
+            const pastBody = document.getElementById("pastBody");
+            pastBody.style.display = "none";
+
+            togglePast.addEventListener("click", function () {
+                pastBody.style.display =
+                    pastBody.style.display === "none" || pastBody.style.display === ""
+                        ? "table-row-group"
+                        : "none";
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>

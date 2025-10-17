@@ -39,3 +39,20 @@ function prevSlide() {
 nextBtn.addEventListener("click", nextSlide);
 prevBtn.addEventListener("click", prevSlide);
 showSlide(currentIndex);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleHeader = document.getElementById("toggleTable");
+    const tableBody = document.getElementById("tableBody");
+
+    // Start hidden
+    tableBody.style.display = "none";
+
+    // Toggle visibility on click
+    toggleHeader.addEventListener("click", function () {
+        if (tableBody.style.display === "none" || tableBody.style.display === "") {
+            tableBody.style.display = "table-row-group";
+        } else {
+            tableBody.style.display = "none";
+        }
+    });
+});
