@@ -5,64 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="sprint.js"></script>
+    <script src="sprint.js"></script>
     <title>Professional Disc Golf Association</title>
 </head>
 
 <body>
-    <div id='page'>
-
-
-        <header>
-            <nav>
+    <header>
+        <!--left part of nav/logo-->
+        <nav class="topbar">
+            <a class="brand" href="/">
                 <img id='logo' src="https://www.pdga.com/sites/all/themes/pdga/logo.png" alt="pdga logo" />
+            </a>
+
+            <!--middle part of nav-->
+            <ul class="mainnav">
+                <li><a class="btn" href="https://www.pdga.com/" target="_blank">Home</a></li>
+                <li><a class="btn" href="https://www.pdga.com/membership" target="_blank">Membership</a></li>
+                <li><a class="btn" href="https://www.pdga.com/tour/events" target="_blank">Events</a></li>
+                <li><a class="btn" href="https://www.pdga.com/user/login?destination=course-directory">Login</a>
+                </li>
+            </ul>
+            <!-- right side of nav search + hamburger icon-->
+            <div class="actions">
+                <!--search icon-->
+                <button class="icon-btn" id="searchToggle" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+
+                <!-- hidden search bar -->
+                <div class="search-box" id="searchBox">
+                    <form action="https://www.pdga.com/search" method="get" target="_blank">
+                        <input type="search" id="searchInput" name="keywords" placeholder="Search PDGA…" />
+                    </form>
+                </div>
+            </div>
+
+            <!-- HAMBURGER MENU + DROPDOWN -->
+            <div class="menu-wrapper">
+                <button class="icon-btn menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <!-- hamburger -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
+                <!--additonal buttons-->
+                <div class="menu-dropdown" role="menu">
+                    <a href="https://www.pdga.com/introduction" role="menuitem">About</a>
+                    <a href="https://www.pdga.com/rules" role="menuitem">Rules</a>
+                    <a href="https://www.pdga.com/international" role="menuitem">International</a>
+                    <a href="https://www.pdga.com/course-directory" role="menuitem">Courses</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
-
-                <form action="https://www.pdga.com/search" method="get" target="_blank">
-                    <input type="search" name="keywords" placeholder="Search PDGA…" />
-                    <button type="submit">Search</button>
-                </form>
-
-                <ul>
-                    <li><a class="btn" href="https://www.pdga.com/" target="_blank">Home</a></li>
-                    <li><a class="btn" href="https://www.pdga.com/introduction" target="_blank">About</a></li>
-                    <li><a class="btn" href="https://www.pdga.com/membership" target="_blank">Membership</a></li>
-                    <li><a class="btn" href="https://www.pdga.com/tour/events" target="_blank">Events</a></li>
-                    <li><a class="btn" href="https://www.pdga.com/throwgreen" target="_blank">More</a></li>
-                </ul>
-            </nav>
-        </header>
-        <!--COMMENT BOX-->
-
-
+    <!-- main event section-->
+    <div id='page'>
         <section id='content'>
             <div id='panel'>
-                <input id='event_search' value='Search events...'></input>
-                <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
+
+                <div id='searchContainer' style="position: relative; width: 298px; margin: 0 auto;">
+                    <input id='searchInput' type="text" placeholder="Search...">
+                    <div id="suggestionsContainer"></div>
                 </div>
+
                 <div id='top'>
                     <img id='event_logo' width=100px
-                        src='https://d22ksth68ujgu2.cloudfront.net/t_event-listing-logo_2be7a4f1-76fa-4c7d-9fb5-bb6f02c4cbbd' />
+                        src="https://m.discgolfscene.com/flyers/tournaments/100712/terron-open-2025-1755087493-large.jpg" />
                     <div id='event_header'>
                         <h1 id='event_title'>TerRon Open - </h1>
                         <h2 id='event_subtitle'>PRO / AM B-TIER</h2>
                         <h3 id='event_location'>Kent, Washington</h3>
                         <h4 id='event_director'>Directed by Tyler Shrock</h4>
                     </div>
+
                     <p id='desc'> The TerRon Open is hosted yearly at Lake Fenwick Park in Kent, Washington. This park
                         boasts
                         disc golf baskets alongside lush trees and greenery. It currently hosts 7 divisions and has been
                         hosted since 2020.
                     </p>
                 </div>
+                <!--end of event section-->
 
+                <!--upcoming event section-->
                 <div id='upcoming'>
                     <h5>Upcoming Event</h5>
                     <div id='up_events'>
@@ -82,12 +118,30 @@
                         </table>
                     </div>
                 </div>
+                <!-- end of event section-->
+
+                <!-- graph section-->
+                <section class="graphs">
+                    <div class="graphcontainer">
+                        <figure>
+                            <img src="image/winner prize amount.png" alt="Graph 1: field size over time">
+                            <figcaption>Winner Prizes</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="image/Terron open 2025 .png" alt="Graph 2: purse by year">
+                            <figcaption>Pro purse by year</figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <!--end of graph section-->
 
 
                 <table id="past">
+                    <h5>Past Event</h5>
                     <thead>
-                        <tr id="togglePast">
-                            <th id="year" width="29.35px">Year</th>
+                        <tr id="togglePast" class="toggle-trigger" data-target="#pastBody" tabindex="0">
+                            <th id="year" width="29.35px">Year&darr; <span class="arrow" aria-hidden="true"></span>
+                            </th>
                             <th width="425px">Sponsor</th>
                             <th>Pro Purse</th>
                         </tr>
@@ -129,6 +183,43 @@
 
             </div>
         </section>
+        <div id="dashboard">
+            <h5>LeaderBoard</h5>
+
+
+            <div class="dashboard-summary">
+                <table id="winner_counts">
+                    <thead>
+                        <tr id="toggleTable" class="toggle-trigger" data-target="#tableBody" tabindex="0">
+                            <th>Winner &darr; <span class="arrow" aria-hidden="true"></span></th>
+                            <th>Wins</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td>Kirby Snyder</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Cory McCarthy</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Dan O'Brien</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Steve Bell</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Ronald Weimer</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
         <div class="dbwinnertable">
             <section class="cardWinner">
@@ -136,7 +227,7 @@
                 <table id="MPOOpen">
                     <thead>
                         <tr>
-                            <th scope="col">Year</th>
+                            <th scope="col">Year&darr;</th>
                             <th scope="col">Winner</th>
                             <th scope="col">PAR</th>
                             <th scope="col">Total</th>
@@ -189,7 +280,7 @@
                 <table id="mixedpro60">
                     <thead>
                         <tr>
-                            <th scope="col">Year</th>
+                            <th scope="col">Year&darr;</th>
                             <th scope="col">Winner</th>
                             <th scope="col">PAR</th>
                             <th scope="col">Total</th>
@@ -242,7 +333,7 @@
                 <table id="mixedamateur1">
                     <thead>
                         <tr>
-                            <th scope="col">Year</th>
+                            <th scope="col">Year&darr;</th>
                             <th scope="col">Winner</th>
                             <th scope="col">PAR</th>
                             <th scope="col">Total</th>
@@ -277,7 +368,7 @@
                 <table id="MA40">
                     <thead>
                         <tr>
-                            <th scope="col">Year</th>
+                            <th scope="col">Year&darr;</th>
                             <th scope="col">Winner</th>
                             <th scope="col">PAR</th>
                             <th scope="col">Total</th>
@@ -330,7 +421,7 @@
                 <table id="FA40">
                     <thead>
                         <tr>
-                            <th scope="col">Year</th>
+                            <th scope="col">Year&darr;</th>
                             <th scope="col">Winner</th>
                             <th scope="col">PAR</th>
                             <th scope="col">Total</th>
@@ -361,7 +452,7 @@
                 <table id="MA60">
                     <thead>
                         <tr>
-                            <th scope="col">Year</th>
+                            <th scope="col">Year&darr;</th>
                             <th scope="col">Winner</th>
                             <th scope="col">PAR</th>
                             <th scope="col">Total</th>
@@ -384,7 +475,7 @@
                 <table id="MA3">
                     <thead>
                         <tr>
-                            <th scope="col">Year</th>
+                            <th scope="col">Year&darr;</th>
                             <th scope="col">Winner</th>
                             <th scope="col">PAR</th>
                             <th scope="col">Total</th>
@@ -432,43 +523,6 @@
                 </table>
             </section>
         </div>
-        <div id="dashboard">
-            <h5>LeaderBoard</h5>
-
-            <div class="dashboard-summary">
-                <table id="winner_counts">
-                    <thead>
-                        <tr id="toggleTable">
-                            <th>Winner</th>
-                            <th>Wins</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                        <tr>
-                            <td>Kirby Snyder</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>Cory McCarthy</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>Dan O'Brien</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>Steve Bell</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>Ronald Weimer</td>
-                            <td>2</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
 
 
         <footer>
@@ -477,37 +531,16 @@
                     Reserved.</p>
                 <p>3828 Dogwood Lane, Appling, GA, USA 30802-3012 &mdash;
                     Phone:&nbsp;+1-706-261-6342</p>
+                <ul class="footermedia">
+                    <li><a class="btn" href="https://www.instagram.com/pdga/?hl=en" target="_blank">Instagram</a></li>
+                    <li><a class="btn" href="https://www.facebook.com/pdga/" target="_blank">Facebook</a></li>
+                    <li><a class="btn" href="https://x.com/pdga" target="_blank">X</a></li>
+                    <li><a class="btn" href="https://www.linkedin.com/groups?gid=31030" target="_blank">LinkedIn</a>
+                    </li>
+                </ul>
             </div>
         </footer>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // === LeaderBoard Toggle ===
-            const toggleHeader = document.getElementById("toggleTable");
-            const tableBody = document.getElementById("tableBody");
-            tableBody.style.display = "none";
-
-            toggleHeader.addEventListener("click", function () {
-                tableBody.style.display =
-                    tableBody.style.display === "none" || tableBody.style.display === ""
-                        ? "table-row-group"
-                        : "none";
-            });
-
-            // === Past Events Toggle ===
-            const togglePast = document.getElementById("togglePast");
-            const pastBody = document.getElementById("pastBody");
-            pastBody.style.display = "none";
-
-            togglePast.addEventListener("click", function () {
-                pastBody.style.display =
-                    pastBody.style.display === "none" || pastBody.style.display === ""
-                        ? "table-row-group"
-                        : "none";
-            });
-        });
-
-    </script>
 
 </body>
 

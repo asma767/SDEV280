@@ -1,58 +1,213 @@
-var slides = [
-    { src: "https://live.staticflickr.com/65535/54746751923_2514477b77_z.jpg", title: "The Final Throw", caption: "A contestant from TerRon 2023 displays her disc golf skills in the final stretch of the tournament." },
-    { src: "https://live.staticflickr.com/65535/54744574009_8244a563d8_z.jpg", title: "TerRon Open", caption: "Competitors prepare for their round at the TerRon Open, set against the scenic fairways of Lake Fenwick Park." },
-    { src: "https://live.staticflickr.com/65535/54746751058_7c00077966_z.jpg", title: "TerRon Open", caption: "Focused play and friendly competition highlight the spirit of the TerRon Open." },
-    { src: "https://live.staticflickr.com/65535/54746747278_b400a23063_z.jpg", title: "TerRon Open", caption: "Players make their way to the next tee at the TerRon Open." },
-    { src: "https://live.staticflickr.com/65535/54707981879_03f07197fb_z.jpg", title: "TerRon Open", caption: "Two disc golfers share a light moment during play at the TerRon Open" },
-    { src: "https://live.staticflickr.com/65535/54676446026_a93c90012b_z.jpg", title: "2025 Junior", caption: "Junior players show teamwork, focus, and enthusiasm as they take on the course at the TerRon Open." },
-    { src: "https://live.staticflickr.com/65535/54746751433_5c5858f70e_z.jpg", title: "2025 AM Pre-Event", caption: "Amateur competitors warm up and prepare for an exciting day of disc golf at the TerRon Open Pre-Event." },
-    { src: "https://live.staticflickr.com/65535/54744573709_25e6b7ed4f_z.jpg", title: "TerRon Open", caption: "Athletes demonstrate precision and control on the course during the TerRon Open." },
-    { src: "https://live.staticflickr.com/65535/54744564173_d1b5b0c9ec_z.jpg", title: "2025 Am Pre Event", caption: "Disc golfers walking toward the next hole at Lake Fenwick Park." },
-    { src: "https://live.staticflickr.com/65535/54744574044_ccd6a04982.jpg", title: "2025 Am Pre Event", caption: "Players take in the course scenery and prepare for their next round at the 2025 Am Pre-Event." },
-    { src: "https://live.staticflickr.com/65535/54707972548_1b4761e348.jpg", title: "TerRon Open", caption: "Action from the fairways — competitors give their all at the TerRon Open." },
-    { src: "https://live.staticflickr.com/65535/54676686104_ce7c216208.jpg", title: "2025 Juniors", caption: "The junior team represents the next generation of disc golfers — full of skill, energy, and passion for the sport." }
-];
-var imgEl = document.getElementById("slide_pic");
-var titleEl = document.getElementById("slide_title");
-var captionEl = document.getElementById("slide_caption");
-var prevBtn = document.querySelector("#slide .nav_prev");
-var nextBtn = document.querySelector("#slide .nav_next");
-var currentIndex = 0;
-
-
-//function that shows one slide on the page.
-function showSlide(index) {
-    var s = slides[index];
-    imgEl.src = s.src;
-    imgEl.alt = s.title || "Event photo";
-    titleEl.textContent = s.title || "";
-    captionEl.textContent = s.caption || "";
-}
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-}
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-}
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
-showSlide(currentIndex);
+// Search bar JS - Seadrah
 
 document.addEventListener("DOMContentLoaded", function () {
+    // === Search Bar ===
+    const searchInput = document.getElementById('searchInput');
+    const suggestionsContainer = document.getElementById('suggestionsContainer');
+    const data = ['TerRon Open'];
+
+    searchInput.addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase();
+        suggestionsContainer.innerHTML = '';
+
+        if (searchTerm.length === 0) {
+            suggestionsContainer.style.display = 'none';
+            return;
+        }
+
+        const filteredSuggestions = data.filter(item =>
+            item.toLowerCase().includes(searchTerm)
+        );
+
+        if (filteredSuggestions.length > 0) {
+            suggestionsContainer.style.display = 'block';
+            filteredSuggestions.forEach(suggestion => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.classList.add('suggestion-item');
+                suggestionItem.textContent = suggestion;
+                suggestionItem.addEventListener('click', function () {
+                    searchInput.value = suggestion;
+                    suggestionsContainer.style.display = 'none';
+                });
+                suggestionsContainer.appendChild(suggestionItem);
+            });
+        } else {
+            suggestionsContainer.style.display = 'none';
+        }
+    });
+
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function (event) {
+        if (!searchInput.contains(event.target) && !suggestionsContainer.contains(event.target)) {
+            suggestionsContainer.style.display = 'none';
+        }
+    });
+
+    // === LeaderBoard Toggle ===
     const toggleHeader = document.getElementById("toggleTable");
     const tableBody = document.getElementById("tableBody");
-
-    // Start hidden
     tableBody.style.display = "none";
 
-    // Toggle visibility on click
     toggleHeader.addEventListener("click", function () {
-        if (tableBody.style.display === "none" || tableBody.style.display === "") {
-            tableBody.style.display = "table-row-group";
-        } else {
-            tableBody.style.display = "none";
+        tableBody.style.display =
+            tableBody.style.display === "none" || tableBody.style.display === ""
+                ? "table-row-group"
+                : "none";
+    });
+
+    // === Past Events Toggle ===
+    const togglePast = document.getElementById("togglePast");
+    const pastBody = document.getElementById("pastBody");
+    pastBody.style.display = "none";
+
+    togglePast.addEventListener("click", function () {
+        pastBody.style.display =
+            pastBody.style.display === "none" || pastBody.style.display === ""
+                ? "table-row-group"
+                : "none";
+    });
+});
+
+// End of search bar JS
+
+document.addEventListener("DOMContentLoaded", function () {
+    // === LeaderBoard Toggle ===
+    const toggleHeader = document.getElementById("toggleTable");
+    const tableBody = document.getElementById("tableBody");
+    tableBody.style.display = "none";
+
+    toggleHeader.addEventListener("click", function () {
+        tableBody.style.display =
+            tableBody.style.display === "none" || tableBody.style.display === ""
+                ? "table-row-group"
+                : "none";
+    });
+
+    // === Past Events Toggle ===
+    const togglePast = document.getElementById("togglePast");
+    const pastBody = document.getElementById("pastBody");
+    pastBody.style.display = "none";
+
+    togglePast.addEventListener("click", function () {
+        pastBody.style.display =
+            pastBody.style.display === "none" || pastBody.style.display === ""
+                ? "table-row-group"
+                : "none";
+    });
+});
+
+// header js 
+// 3 bar additonal button
+document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.menu-toggle');
+
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', e => {
+            const wrapper = e.target.closest('.menu-wrapper');
+            const isOpen = wrapper.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+    });
+
+    // close when clicking outside
+    document.addEventListener('click', e => {
+        document.querySelectorAll('.menu-wrapper.active').forEach(menu => {
+            if (!menu.contains(e.target)) menu.classList.remove('active');
+        });
+    });
+
+    // close with Escape
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.menu-wrapper.active').forEach(menu => menu.classList.remove('active'));
         }
+    });
+});
+
+
+// search bar 
+// Search toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const searchToggle = document.getElementById("searchToggle");
+    const searchBox = document.querySelector(".search-box");
+
+    if (searchToggle && searchBox) {
+        searchToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            searchBox.classList.toggle("active");
+            if (searchBox.classList.contains("active")) {
+                searchBox.querySelector("input").focus();
+            }
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!searchBox.contains(e.target) && !searchToggle.contains(e.target)) {
+                searchBox.classList.remove("active");
+            }
+        });
+    }
+});
+// end of header js
+
+// Make all winners tables inside .dbwinnertable collapsible by header click
+document.addEventListener('DOMContentLoaded', () => {
+    const winnerTables = document.querySelectorAll('.dbwinnertable table');
+    winnerTables.forEach(table => {
+        // skip if no thead/tbody
+        const thead = table.querySelector('thead');
+        const tbody = table.querySelector('tbody');
+        if (!thead || !tbody) return;
+
+        // hide tbody initially
+        tbody.style.display = 'none';
+
+        // pick the header row (first tr in thead) to act as toggle
+        const headerRow = thead.querySelector('tr') || thead;
+        headerRow.tabIndex = 0;
+        headerRow.style.cursor = 'pointer';
+        headerRow.setAttribute('role', 'button');
+        headerRow.setAttribute('aria-expanded', 'false');
+
+        function setOpen(open) {
+            headerRow.setAttribute('aria-expanded', open ? 'true' : 'false');
+            tbody.style.display = open ? 'table-row-group' : 'none';
+        }
+
+        headerRow.addEventListener('click', function () {
+            const isHidden = tbody.style.display === 'none' || tbody.style.display === '';
+            setOpen(isHidden);
+        });
+        headerRow.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const isHidden = tbody.style.display === 'none' || tbody.style.display === '';
+                setOpen(isHidden);
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // === LeaderBoard Toggle ===
+    const toggleHeader = document.getElementById("toggleTable");
+    const tableBody = document.getElementById("tableBody");
+    tableBody.style.display = "none";
+
+    toggleHeader.addEventListener("click", function () {
+        tableBody.style.display =
+            tableBody.style.display === "none" || tableBody.style.display === ""
+                ? "table-row-group"
+                : "none";
+    });
+
+    // === Past Events Toggle ===
+    const togglePast = document.getElementById("togglePast");
+    const pastBody = document.getElementById("pastBody");
+    pastBody.style.display = "none";
+
+    togglePast.addEventListener("click", function () {
+        pastBody.style.display =
+            pastBody.style.display === "none" || pastBody.style.display === ""
+                ? "table-row-group"
+                : "none";
     });
 });
