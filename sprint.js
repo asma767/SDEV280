@@ -1,3 +1,4 @@
+
 // Search bar JS - Fixed version
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById('mainSearchInput');
@@ -9,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Sample data for suggestions with URLs
     const data = [
-        { name: 'TerRon Open', url: 'https://www.pdga.com/tour/event/95906' },
-        { name: 'USDGC', url: 'https://www.pdga.com/tour/event/95906' }
+        { name: 'TerRon Open', url: '/index.html' },
+        { name: 'USDGC', url: '/event.html' }
     ];
 
     if (!searchInput || !suggestionsContainer) {
@@ -81,7 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// end of main search bar JS
+// end of main search bar
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     // === LeaderBoard Toggle ===
@@ -199,28 +202,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function () {
-    // === LeaderBoard Toggle ===
-    const toggleHeader = document.getElementById("toggleTable");
-    const tableBody = document.getElementById("tableBody");
+
+
+document.querySelectorAll(".table-toggle").forEach(toggle => {
+    const tableBody = toggle.nextElementSibling.querySelector("tbody");
     tableBody.style.display = "none";
 
-    toggleHeader.addEventListener("click", function () {
-        tableBody.style.display =
-            tableBody.style.display === "none" || tableBody.style.display === ""
-                ? "table-row-group"
-                : "none";
-    });
-
-    // === Past Events Toggle ===
-    const togglePast = document.getElementById("togglePast");
-    const pastBody = document.getElementById("pastBody");
-    pastBody.style.display = "none";
-
-    togglePast.addEventListener("click", function () {
-        pastBody.style.display =
-            pastBody.style.display === "none" || pastBody.style.display === ""
-                ? "table-row-group"
-                : "none";
+    toggle.addEventListener("click", () => {
+        const isHidden = tableBody.style.display === "none";
+        tableBody.style.display = isHidden ? "table-row-group" : "none";
+        toggle.classList.toggle("active", isHidden);
     });
 });
+

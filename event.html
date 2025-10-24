@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="usdgc-style.css">
     <script src="sprint.js"></script>
     <title>United States Disc Golf Championship</title>
 </head>
@@ -88,89 +89,93 @@
                         <h1 id='event_title'>United States Disc Golf Championship </h1>
                         <h2 id='event_subtitle'></h2>
                         <h3 id='event_location'>Rock Hill, South Carolina, United States</h3>
-                        <h4 id='event_director'>Directed Jonathan Poole</h4>
+                        <h4 id='event_director'>Directed by Jonathan Poole</h4>
+                        <h4 id='event_director'>Annual event since 1999</h4>
+                        <p>total purse from 1999-2025 $1,480,241</h4>
+
+
+                        <p id='desc'>In an effort to bring the best disc golfers together, the USDGC combines
+                            all players who qualify into a single division. Virtually every other disc golf
+                            tournament
+                            in the world offers divisions based on age, gender and skill level
+                        </p>
                     </div>
+                    <!--end of event section-->
 
-                    <p id='desc'>
-
-                    </p>
-                </div>
-                <!--end of event section-->
-
-                <!--upcoming event section-->
-                <div id='upcoming'>
-                    <h5>Upcoming Event</h5>
-                    <div id='up_events'>
-                        <table id='upcoming_table'>
-                            <tbody>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Date</th>
-                                    <th>Pro Purse</th>
-                                </tr>
-                                <tr>
-                                    <td>2026 United States Disc Golf Championship</td>
-                                    <td>08-Oct to 11-Oct-2026</td>
-                                    <td>TBD</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <!--upcoming event section-->
+                    <div id='upcoming'>
+                        <h5>Upcoming Event</h5>
+                        <div id='up_events'>
+                            <table id='upcoming_table'>
+                                <tbody>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Date</th>
+                                        <th>Pro Purse</th>
+                                    </tr>
+                                    <tr>
+                                        <td>2026 United States Disc Golf Championship</td>
+                                        <td>08-Oct to 11-Oct-2026</td>
+                                        <td>TBD</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+                    <!-- end of event section-->
+
+
+
+
+                    <table id="past">
+                        <h5>Past Events</h5>
+                        <thead>
+                            <tr id="togglePast" class="toggle-trigger" data-target="#pastBody" tabindex="0">
+                                <th id="year" width="29.35px">Year&darr; <span class="arrow" aria-hidden="true"></span>
+                                </th>
+                                <th width="425px">Sponsor</th>
+                                <th>Pro Purse</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="pastBody">
+                            <tr>
+                                <th><a href="https://www.pdga.com/tour/event/95906">2025</a></th>
+                                <td>N/A</td>
+                                <td>$1,535</td>
+                            </tr>
+                            <tr>
+                                <th><a href="https://www.pdga.com/tour/event/85253">2024</a></th>
+                                <td>Mandos Disc Golf Pro Shop</td>
+                                <td>$1,950</td>
+                            </tr>
+                            <tr>
+                                <th><a href="https://www.pdga.com/tour/event/73697">2023</a></th>
+                                <td>Mandos Disc Golf Pro Shop</td>
+                                <td>$1,685</td>
+                            </tr>
+                            <tr>
+                                <th><a href="https://www.pdga.com/tour/event/62889">2022</a></th>
+                                <td>Mandos Disc Golf Pro Shop, MVP Discs, Mastercraft Electric</td>
+                                <td>$2,006</td>
+                            </tr>
+                            <tr>
+                                <th><a href="https://www.pdga.com/tour/event/54273">2021</a></th>
+                                <td>Mandos Disc Golf Pro Shop, MVP Disc Sports</td>
+                                <td>$1,795</td>
+                            </tr>
+                            <tr>
+                                <th><a href="https://www.pdga.com/tour/event/47276">2020</a></th>
+                                <td>Mandos Disc Golf Pro Shop, MVP Disc Sports</td>
+                                <td>$1,120</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </div>
-                <!-- end of event section-->
-
-
-
-
-                <table id="past">
-                    <h5>Past Event</h5>
-                    <thead>
-                        <tr id="togglePast" class="toggle-trigger" data-target="#pastBody" tabindex="0">
-                            <th id="year" width="29.35px">Year&darr; <span class="arrow" aria-hidden="true"></span>
-                            </th>
-                            <th width="425px">Sponsor</th>
-                            <th>Pro Purse</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="pastBody">
-                        <tr>
-                            <th><a href="https://www.pdga.com/tour/event/95906">2025</a></th>
-                            <td>N/A</td>
-                            <td>$1,535</td>
-                        </tr>
-                        <tr>
-                            <th><a href="https://www.pdga.com/tour/event/85253">2024</a></th>
-                            <td>Mandos Disc Golf Pro Shop</td>
-                            <td>$1,950</td>
-                        </tr>
-                        <tr>
-                            <th><a href="https://www.pdga.com/tour/event/73697">2023</a></th>
-                            <td>Mandos Disc Golf Pro Shop</td>
-                            <td>$1,685</td>
-                        </tr>
-                        <tr>
-                            <th><a href="https://www.pdga.com/tour/event/62889">2022</a></th>
-                            <td>Mandos Disc Golf Pro Shop, MVP Discs, Mastercraft Electric</td>
-                            <td>$2,006</td>
-                        </tr>
-                        <tr>
-                            <th><a href="https://www.pdga.com/tour/event/54273">2021</a></th>
-                            <td>Mandos Disc Golf Pro Shop, MVP Disc Sports</td>
-                            <td>$1,795</td>
-                        </tr>
-                        <tr>
-                            <th><a href="https://www.pdga.com/tour/event/47276">2020</a></th>
-                            <td>Mandos Disc Golf Pro Shop, MVP Disc Sports</td>
-                            <td>$1,120</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
         </section>
         <div id="dashboard">
-            <h5>LeaderBoard</h5>
+            <h5>Leaderboard</h5>
 
 
             <div class="dashboard-summary">
@@ -210,318 +215,19 @@
         <section class="graphs">
             <div class="graphcontainer">
                 <figure>
-                    <img src="image/winner prize amount.png" alt="Graph 1: field size over time">
+                    <img src="image/graph3.png" alt="Graph 1: field size over time">
                     <figcaption>Winner Prizes</figcaption>
                 </figure>
                 <figure>
-                    <img src="image/Terron open 2025 .png" alt="Graph 2: purse by year">
-                    <figcaption>Pro purse by year</figcaption>
+                    <img src="image/graph2.png" alt="Graph 2: purse by year">
+                    <figcaption>Purse by year</figcaption>
                 </figure>
             </div>
         </section>
         <!--end of graph section-->
 
         <div class="dbwinnertable">
-            <section class="cardWinner">
-                <h3> PDGA Winners MPO Open</h3>
-                <table id="MPOOpen">
-                    <thead>
-                        <tr>
-                            <th scope="col">Year&darr;</th>
-                            <th scope="col">Winner</th>
-                            <th scope="col">PAR</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
 
-                    <tbody>
-                        <tr>
-                            <th scope="row">2025</th>
-                            <td>Kirby Snyder</td>
-                            <td>-16</td>
-                            <td>92</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2024</th>
-                            <td>Kirby Snyder</td>
-                            <td>-16</td>
-                            <td>92</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2023</th>
-                            <td>Brandon McNew</td>
-                            <td>-16</td>
-                            <td>92</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2022</th>
-                            <td>Kirby Snyder</td>
-                            <td>-15</td>
-                            <td>93</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2021</th>
-                            <td>Kirby Snyder</td>
-                            <td>-14</td>
-                            <td>94</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2020</th>
-                            <td>Tyler Schrock</td>
-                            <td>-14</td>
-                            <td>94</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="cardWinner">
-                <h3> Mixed Pro 60+</h3>
-                <table id="mixedpro60">
-                    <thead>
-                        <tr>
-                            <th scope="col">Year&darr;</th>
-                            <th scope="col">Winner</th>
-                            <th scope="col">PAR</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">2025</th>
-                            <td>Steve Bell</td>
-                            <td>-4</td>
-                            <td>104</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2024</th>
-                            <td>Steve Bell</td>
-                            <td>-1</td>
-                            <td>107</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2023</th>
-                            <td>Rick Kapalko</td>
-                            <td>-1</td>
-                            <td>107</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2022</th>
-                            <td>Ronald Weimer</td>
-                            <td>+4</td>
-                            <td>112</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2021</th>
-                            <td>Scott Malone</td>
-                            <td>+7</td>
-                            <td>115</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2020</th>
-                            <td>Ronald Weimer</td>
-                            <td>-3</td>
-                            <td>105</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="cardWinner">
-                <h3> Mixed Amateur 1</h3>
-                <table id="mixedamateur1">
-                    <thead>
-                        <tr>
-                            <th scope="col">Year&darr;</th>
-                            <th scope="col">Winner</th>
-                            <th scope="col">PAR</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">2025</th>
-                            <td>Trevor Hill</td>
-                            <td>-7</td>
-                            <td>101</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2024</th>
-                            <td>Thomas Gracey</td>
-                            <td>-11</td>
-                            <td>97</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2023</th>
-                            <td>Jayson Gregory</td>
-                            <td>-5</td>
-                            <td>103</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="cardWinner">
-                <h3> MA40 Mixed Amateur 40+</h3>
-                <table id="MA40">
-                    <thead>
-                        <tr>
-                            <th scope="col">Year&darr;</th>
-                            <th scope="col">Winner</th>
-                            <th scope="col">PAR</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">2025</th>
-                            <td>Dan O'Brien</td>
-                            <td>-4</td>
-                            <td>104</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2024</th>
-                            <td>Cory McCarthy</td>
-                            <td>-2</td>
-                            <td>106</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2023</th>
-                            <td>Dan O'Brien</td>
-                            <td>-8</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2022</th>
-                            <td>Tom Rohrer</td>
-                            <td>-6</td>
-                            <td>102</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2021</th>
-                            <td>Cory McCarthy</td>
-                            <td>-2</td>
-                            <td>106</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2020</th>
-                            <td>Cory McCarthy</td>
-                            <td>-1</td>
-                            <td>107</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="cardWinner">
-                <h3> FA40- Women's Amateur 40+</h3>
-                <table id="FA40">
-                    <thead>
-                        <tr>
-                            <th scope="col">Year&darr;</th>
-                            <th scope="col">Winner</th>
-                            <th scope="col">PAR</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">2025</th>
-                            <td>Bex Worrich</td>
-                            <td>+34</td>
-                            <td>142</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2023</th>
-                            <td>Deborah Barker</td>
-                            <td>+15</td>
-                            <td>123</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </section>
-
-
-            <section class="cardWinner">
-                <h3> MA60 - Mixed Amateur 60+</h3>
-                <table id="MA60">
-                    <thead>
-                        <tr>
-                            <th scope="col">Year&darr;</th>
-                            <th scope="col">Winner</th>
-                            <th scope="col">PAR</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">2025</th>
-                            <td>Jim Hansen</td>
-                            <td>+3</td>
-                            <td>111</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="cardWinner">
-                <h3> MA3 - Mixed Amateur 3</h3>
-                <table id="MA3">
-                    <thead>
-                        <tr>
-                            <th scope="col">Year&darr;</th>
-                            <th scope="col">Winner</th>
-                            <th scope="col">PAR</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">2025</th>
-                            <td>Matthew Mulkins</td>
-                            <td>+2</td>
-                            <td>110</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2024</th>
-                            <td>Josiah Neibauer</td>
-                            <td>-2</td>
-                            <td>106</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2023</th>
-                            <td>Nathan Cravens</td>
-                            <td>+2</td>
-                            <td>110</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2022</th>
-                            <td>Eric Todd</td>
-                            <td>+3</td>
-                            <td>111</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2021</th>
-                            <td>Cameron Sphung</td>
-                            <td>-4</td>
-                            <td>104</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2020</th>
-                            <td>Daren Daschofsky</td>
-                            <td>+7</td>
-                            <td>115</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
         </div>
 
 

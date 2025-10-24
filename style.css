@@ -99,7 +99,7 @@ header nav a.btn {
 }
 
 .mainnav .btn:hover {
-    background: green;
+    background: #03253e;
     color: white;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 }
@@ -477,14 +477,16 @@ table#upcoming_table,
 table#past {
     table-layout: fixed;
     width: 720px;
+    margin-bottom: 20px;
 }
+
 
 tbody {
     border-top: 1px solid #ccc;
 }
 
-thead th,
-th {
+table thead th,
+table th {
     background: linear-gradient(to bottom, #05426e 0%, #03253e 100%);
     color: #fff;
     font-weight: bold;
@@ -497,6 +499,36 @@ th {
 
 table#past {
     margin-bottom: 50px;
+}
+
+/* small arrow positioned outside the Past Events table */
+table#past {
+    position: relative;
+    /* anchor for pseudo-element */
+}
+
+table#past::after {
+    content: "";
+    position: absolute;
+    left: -18px;
+    /* sits just outside the table edge */
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    /* down-pointing chevron */
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #0B5781;
+    border-bottom: 2px solid #0B5781;
+    border-radius: 1px;
+    box-sizing: content-box;
+    transition: transform .18s ease;
+    pointer-events: none;
+}
+
+/* when the past tbody is visible we can rotate the arrow via a class if JS sets it
+   (keeps CSS flexible — default is down/closed) */
+table#past.open::after {
+    transform: translateY(-50%) rotate(-135deg);
 }
 
 table#past th#year {
@@ -522,6 +554,9 @@ th {
     vertical-align: middle;
 }
 
+#dashboard {
+    margin-bottom: 30px;
+}
 
 /* Winner tables */
 .dbwinnertable {
