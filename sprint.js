@@ -1,4 +1,3 @@
-// Search bar JS - Seadrah
 // Search bar JS - Fixed version
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById('mainSearchInput');
@@ -82,9 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// end of main search bar
-
-
+// end of main search bar JS
 
 document.addEventListener("DOMContentLoaded", function () {
     // === LeaderBoard Toggle ===
@@ -200,5 +197,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 setOpen(isHidden);
             }
         });
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // === LeaderBoard Toggle ===
+    const toggleHeader = document.getElementById("toggleTable");
+    const tableBody = document.getElementById("tableBody");
+    tableBody.style.display = "none";
+
+    toggleHeader.addEventListener("click", function () {
+        tableBody.style.display =
+            tableBody.style.display === "none" || tableBody.style.display === ""
+                ? "table-row-group"
+                : "none";
+    });
+
+    // === Past Events Toggle ===
+    const togglePast = document.getElementById("togglePast");
+    const pastBody = document.getElementById("pastBody");
+    pastBody.style.display = "none";
+
+    togglePast.addEventListener("click", function () {
+        pastBody.style.display =
+            pastBody.style.display === "none" || pastBody.style.display === ""
+                ? "table-row-group"
+                : "none";
     });
 });
