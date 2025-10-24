@@ -1,13 +1,27 @@
 // Search bar JS - Seadrah
-
+// Search bar JS - Fixed version
 document.addEventListener("DOMContentLoaded", function () {
-    // === Search Bar ===
-    const searchInput = document.getElementById('searchInput');
-    const suggestionsContainer = document.getElementById('suggestionsContainer');
-    const data = ['TerRon Open'];
+    const searchInput = document.getElementById('mainSearchInput');
+    const suggestionsContainer = document.getElementById('mainSuggestionsContainer'); // Updated ID
+
+    // Debug: Check if elements exist
+    console.log('Search input found:', searchInput);
+    console.log('Suggestions container found:', suggestionsContainer);
+
+    // Sample data for suggestions with URLs
+    const data = [
+        { name: 'TerRon Open', url: 'https://www.pdga.com/tour/event/95906' },
+        { name: 'USDGC', url: 'https://www.pdga.com/tour/event/95906' }
+    ];
+
+    if (!searchInput || !suggestionsContainer) {
+        console.error('Search elements not found!');
+        return;
+    }
 
     searchInput.addEventListener('input', function () {
         const searchTerm = this.value.toLowerCase();
+        console.log('Search term:', searchTerm);
         suggestionsContainer.innerHTML = '';
 
         if (searchTerm.length === 0) {
@@ -16,23 +30,47 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const filteredSuggestions = data.filter(item =>
-            item.toLowerCase().includes(searchTerm)
+            item.name.toLowerCase().includes(searchTerm)
         );
+
+        console.log('Filtered suggestions:', filteredSuggestions);
 
         if (filteredSuggestions.length > 0) {
             suggestionsContainer.style.display = 'block';
-            filteredSuggestions.forEach(suggestion => {
-                const suggestionItem = document.createElement('div');
+            filteredSuggestions.forEach((suggestion, index) => {
+                const suggestionItem = document.createElement('a');
                 suggestionItem.classList.add('suggestion-item');
-                suggestionItem.textContent = suggestion;
-                suggestionItem.addEventListener('click', function () {
-                    searchInput.value = suggestion;
+                suggestionItem.textContent = suggestion.name;
+                suggestionItem.href = suggestion.url;
+                suggestionItem.target = '_blank'; // Open in new tab
+
+                // Add data attribute to track if it's the first item
+                if (index === 0) {
+                    suggestionItem.setAttribute('data-first', 'true');
+                }
+
+                suggestionItem.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.open(suggestion.url, '_blank');
+                    searchInput.value = suggestion.name;
                     suggestionsContainer.style.display = 'none';
                 });
+
                 suggestionsContainer.appendChild(suggestionItem);
             });
         } else {
             suggestionsContainer.style.display = 'none';
+        }
+    });
+
+    // Handle Enter key to select first result
+    searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const firstSuggestion = suggestionsContainer.querySelector('.suggestion-item[data-first="true"]');
+            if (firstSuggestion) {
+                firstSuggestion.click();
+            }
         }
     });
 
@@ -42,33 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
             suggestionsContainer.style.display = 'none';
         }
     });
-
-    // === LeaderBoard Toggle ===
-    const toggleHeader = document.getElementById("toggleTable");
-    const tableBody = document.getElementById("tableBody");
-    tableBody.style.display = "none";
-
-    toggleHeader.addEventListener("click", function () {
-        tableBody.style.display =
-            tableBody.style.display === "none" || tableBody.style.display === ""
-                ? "table-row-group"
-                : "none";
-    });
-
-    // === Past Events Toggle ===
-    const togglePast = document.getElementById("togglePast");
-    const pastBody = document.getElementById("pastBody");
-    pastBody.style.display = "none";
-
-    togglePast.addEventListener("click", function () {
-        pastBody.style.display =
-            pastBody.style.display === "none" || pastBody.style.display === ""
-                ? "table-row-group"
-                : "none";
-    });
 });
 
-// End of search bar JS
+// end of main search bar
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     // === LeaderBoard Toggle ===
@@ -184,30 +200,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 setOpen(isHidden);
             }
         });
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // === LeaderBoard Toggle ===
-    const toggleHeader = document.getElementById("toggleTable");
-    const tableBody = document.getElementById("tableBody");
-    tableBody.style.display = "none";
-
-    toggleHeader.addEventListener("click", function () {
-        tableBody.style.display =
-            tableBody.style.display === "none" || tableBody.style.display === ""
-                ? "table-row-group"
-                : "none";
-    });
-
-    // === Past Events Toggle ===
-    const togglePast = document.getElementById("togglePast");
-    const pastBody = document.getElementById("pastBody");
-    pastBody.style.display = "none";
-
-    togglePast.addEventListener("click", function () {
-        pastBody.style.display =
-            pastBody.style.display === "none" || pastBody.style.display === ""
-                ? "table-row-group"
-                : "none";
     });
 });
